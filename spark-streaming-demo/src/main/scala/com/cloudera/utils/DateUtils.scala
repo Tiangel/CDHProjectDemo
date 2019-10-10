@@ -1,9 +1,6 @@
 package com.cloudera.utils
 
 import java.text.SimpleDateFormat
-import java.util.{Calendar, Date}
-
-import org.apache.kafka.common.TopicPartition
 
 object DateUtils {
   /**
