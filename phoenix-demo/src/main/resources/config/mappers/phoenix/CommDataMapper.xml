@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hdjt.bigdata.mapper.phoenix.CommDataMapper">
+
+
+
+    <select id="selectData" resultType="java.util.Map" >
+
+        SELECT
+
+        ${columns}
+        FROM MY_SCHEMA.${tableName}
+        <if test="condition != ''">
+            WHERE ${condition}
+        </if>
+
+    </select>
+
+    <select id="selectRowkey" resultType="java.util.Map" >
+        SELECT
+
+        max(rowkey) AS keys
+
+        FROM MY_SCHEMA.${tableName}
+        <if test="condition != ''">
+            WHERE ${condition}
+        </if>
+
+        <if test="p_key != null">
+            GROUP BY (${p_key})
+        </if>
+    </select>
+
+    <select id="dataScheme" resultType="java.util.Map" >
+      select ${col} from  MY_SCHEMA.${tableName} limit 1
+
+    </select>
+
+
+
+</mapper>

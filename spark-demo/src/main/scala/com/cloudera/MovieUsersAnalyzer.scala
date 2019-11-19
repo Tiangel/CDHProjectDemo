@@ -5,7 +5,6 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.catalyst.expressions.aggregate.{Count, Sum}
 
 object MovieUsersAnalyzer {
 
@@ -43,10 +42,18 @@ object MovieUsersAnalyzer {
     // 用户ID::电影ID::评分(满分是5分)::时间戳
     val ratings: RDD[String] = sc.textFile(dataPath + "ratings.dat")
 
-    /**
-      * 功能一 :
-      *  电影中平均得分 Top10（口碑最好）的电影
-      */
+
+    getMoiveTop10(users, movies, ratings)
+
+    //最后关闭 SparkSession
+    spark.stop
+  }
+
+  /**
+    * 功能一 :
+    * 电影中平均得分 Top10（口碑最好）的电影
+    */
+  def getMoiveTop10(users: RDD[String], movies: RDD[String], ratings: RDD[String]): Unit = {
     println("所有电影中平均得分最高（口碑最好）的电影: ")
 
     /**
@@ -54,10 +61,9 @@ object MovieUsersAnalyzer {
       * 如果后面的代码重复使用这些数据，则可以把它们缓存起来。首先把使用 map 算子 RDD 中的每个元素（即文件中的每一行）以 “::” 为分隔符进行拆分，
       * 然后使用 map 算子从拆分后得到的数组中取出需要用到的元素，井把得到的 RDD 缓存起来
       */
-    val movieInfoRDD: RDD[(String, (String, String))] = movies.map(_.split("::")).map(x => (x(0),(x(1),x(2)))).cache()
+    val movieInfoRDD: RDD[(String, (String, String))] = movies.map(_.split("::")).map(x => (x(0), (x(1), x(2)))).cache()
 
-    val ratingsRDD: RDD[(String, String, String, String)] = ratings.map(_.split("::")).map(x => (x(0),x(1),x(2),x(3))).cache()
-
+    val ratingsRDD: RDD[(String, String, String, String)] = ratings.map(_.split("::")).map(x => (x(0), x(1), x(2), x(3))).cache()
 
     /**
       * 第二步：从 ratings 的数据中使用 map 算子获取到形如 (movieID,(ratings,1)) 格式的 RDD
@@ -69,61 +75,62 @@ object MovieUsersAnalyzer {
     /**
       * 第三步：把每个电影的 Sum(ratings) 和 Count(ratings) 相除，得到包含了电影 ID 和平均评分的 RDD
       */
-    val avgRatingsRDD: RDD[(String, Double)] = moviesAndRatingsRDD.map(x => (x._1,x._2._1.toDouble/x._2._2))
+    val avgRatingsRDD: RDD[(String, Double)] = moviesAndRatingsRDD.map(x => (x._1, x._2._1.toDouble / x._2._2))
 
     /**
       * 第四步：把 avgRatingsRDD 与 movieInfoRDD 通过关键宇 (key) 连接到一起，得到形如 (movieID,(MovieName, AvgRating))的 RDD ,
       * 然后格式化为 (AvgRating,MovieName)，并按照 key （也就是平均评分）降序排列，最终取出前 10 个并打印出来.
       */
     avgRatingsRDD.join(movieInfoRDD)
-      .map(item => (item._2._1,item._2._2._1))
+      .map(item => (item._2._1, item._2._2._1))
       .sortByKey(false)
       .take(10)
       .foreach(record => println(record._2 + "评分为: " + record._1))
+  }
 
-    /**
-      * 功能二:
-      * 分析最受男性喜爱的电影 Top10 和最受女性喜爱的电影 Top10
-      */
+
+  /**
+    * 功能二:
+    * 分析最受男性喜爱的电影 Top10 和最受女性喜爱的电影 Top10
+    */
+  def genderMovieTop10(users: RDD[String], movies: RDD[String], ratings: RDD[String]): Unit = {
+
+    // (用户ID,性别(F,M分别表示女性、男性),年龄(使用7个年龄段标记),职业,邮编)
+    //    用户ID::电影ID::评分(满分是5分)::时间戳
     val userGenderRDD: RDD[(String, String, String, String, String)] = users.map(_.split("::")).map(x => (x(0), x(1), x(2), x(3), x(4)))
 
-    userGenderRDD.
-
-
-//    val genderRatingsCacheRDD: RDD[(String, ((String, String, String), String))] =
-//      ratings.map(x => (x._1, (x._1, x._2, x._3))).join(userGenderRDD).cache()
-//
-//    genderRatingsCacheRDD.take(10).foreach(println(_))
-//
-//    val maleFilteredRatingsRDD: RDD[(String, String, String)] =
-//      genderRatingsCacheRDD.filter(x => x._2._2.equals("M")).map(x => x._2._1)
-//
-//    val femaleFilteredRatingsRDD: RDD[(String, String, String)] =
-//      genderRatingsCacheRDD.filter(x => x._2._2.equals("F")).map(x => x._2._1)
-//
-//
-//    println("所有电影中最受男性喜爱的电影 Top10 : ")
-//    maleFilteredRatingsRDD.map(x => (x._1, (x._3.toDouble, 1)))
-//      .reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
-//      .map(x => (x._1, x._2._1.toDouble / x._2._2))
-//      .join(movieinfo)
-//      .map(item => (item._2._1, item._2._2))
-//      .sortByKey(false)
-//      .take(10)
-//      .foreach(record => println(record._2 + "评分为: " + record._1 ))
-//
-//    println("所有电影中最受女性喜爱的电影 Top10 : ")
-//    maleFilteredRatingsRDD.map(x => (x._1, (x._3.toDouble, 1)))
-//      .reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
-//      .map(x => (x._1, x._2._1.toDouble / x._2._2))
-//      .join(movieinfo)
-//      .map(item => (item._2._1, item._2._2))
-//      .sortByKey(false)
-//      .take(10)
-//      .foreach(record => println(record._2 + "评分为: " + record._1 ))
-
-
-    //最后关闭 SparkSession
-    spark.stop
+    val genderRatingsCacheRDD: RDD[(String, ((String, String, String), String))] = ratings.map(_.split("::"))
+      .map(x => (x(0), x(1), x(2), x(3)))
+    //男性
+    //    userGenderRDD.filter(x => x._2.equals("F")).
+    //    genderRatingsCacheRDD.take(10).foreach(println(_))
+    //
+    //    val maleFilteredRatingsRDD: RDD[(String, String, String)] =
+    //      genderRatingsCacheRDD.filter(x => x._2._2.equals("M")).map(x => x._2._1)
+    //
+    //    val femaleFilteredRatingsRDD: RDD[(String, String, String)] =
+    //      genderRatingsCacheRDD.filter(x => x._2._2.equals("F")).map(x => x._2._1)
+    //
+    //
+    //    println("所有电影中最受男性喜爱的电影 Top10 : ")
+    //    maleFilteredRatingsRDD.map(x => (x._1, (x._3.toDouble, 1)))
+    //      .reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
+    //      .map(x => (x._1, x._2._1.toDouble / x._2._2))
+    //      .join(movieinfo)
+    //      .map(item => (item._2._1, item._2._2))
+    //      .sortByKey(false)
+    //      .take(10)
+    //      .foreach(record => println(record._2 + "评分为: " + record._1 ))
+    //
+    //    println("所有电影中最受女性喜爱的电影 Top10 : ")
+    //    maleFilteredRatingsRDD.map(x => (x._1, (x._3.toDouble, 1)))
+    //      .reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
+    //      .map(x => (x._1, x._2._1.toDouble / x._2._2))
+    //      .join(movieinfo)
+    //      .map(item => (item._2._1, item._2._2))
+    //      .sortByKey(false)
+    //      .take(10)
+    //      .foreach(record => println(record._2 + "评分为: " + record._1 ))
   }
+
 }

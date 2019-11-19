@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
  
-public class MyQueue {
+public class MyQueue extends ProducerPerformance {
     // poll: 若队列为空，返回null。
     // remove:若队列为空，抛出NoSuchElementException异常。
     // take:若队列为空，发生阻塞，等待有元素。
@@ -17,12 +17,12 @@ public class MyQueue {
     // LoggerFactory.getLogger(MonitorQueue.class);
     public static BlockingQueue<byte[]> objectQueue = new LinkedBlockingQueue<byte[]>(50 * 10000);
 
+
     public static void addObject(byte[] obj) {
         objectQueue.offer(obj);
     }
 
     public static byte[] getObject() throws InterruptedException {
-        //System.out.println(objectQueue.size());
         return objectQueue.take();
     }
 
@@ -33,15 +33,13 @@ public class MyQueue {
         int total = 3;
         for (int index = 0; index < total; index++) {
             Thread thread = new Thread(new Runnable() {
-
                 @Override
                 public void run() {
                     while (true) {
-                        byte[] data = MyKafkaProducer.getData();
+                        byte[] data = MyKafkaProducer.getData(dataConfig,dataType);
                         addObject(data);
                     }
                 }
-
             });
             thread.start();
             list.add(thread);

@@ -1,6 +1,6 @@
 package com.cloudera.savekafkaoffset
 
-import com.cloudera.utils.KafkaZkUtils
+import com.cloudera.common.utils.KafkaZkUtils
 import kafka.utils.ZkUtils
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer

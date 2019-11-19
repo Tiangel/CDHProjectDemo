@@ -1,6 +1,6 @@
 package com.cloudera.savekafkaoffset
 
-import com.cloudera.utils.{JedisPoolUtils, KafkaRedisUtils, RedisConfig}
+import com.cloudera.common.utils.{JedisPoolUtils, KafkaRedisUtils, RedisConfig}
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.log4j.Logger

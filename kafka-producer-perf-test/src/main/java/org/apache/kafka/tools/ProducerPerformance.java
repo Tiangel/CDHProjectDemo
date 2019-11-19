@@ -20,6 +20,9 @@ import static net.sourceforge.argparse4j.impl.Arguments.store;
 
 public class ProducerPerformance {
 
+    public static String dataConfig;
+    public static String dataType;
+
     public static void main(String[] args) throws Exception {
         ArgumentParser parser = argParser();
 
@@ -27,6 +30,8 @@ public class ProducerPerformance {
             Namespace res = parser.parseArgs(args);
 
             /* parse args */
+            dataConfig = res.getString("dataConfigFile");
+            dataType = res.getString("dataType");
             String topicName = res.getString("topic");
             long numRecords = res.getLong("numRecords");
             Integer recordSize = res.getInt("recordSize");
@@ -104,7 +109,7 @@ public class ProducerPerformance {
                     payload = payloadByteList.get(random.nextInt(payloadByteList.size()));
                 }
                 //这里的payload从生产者队列里面取
-                //long begin = System.currentTimeMillis();
+//                long begin = System.currentTimeMillis();
                 payload = MyQueue.getObject();
                 //long end = System.currentTimeMillis();
                 //System.out.println(end-begin);
@@ -132,7 +137,6 @@ public class ProducerPerformance {
                 System.exit(1);
             }
         }
-
     }
 
     /** Get the command-line argument parser. */
@@ -214,6 +218,21 @@ public class ProducerPerformance {
                 .metavar("CONFIG-FILE")
                 .dest("producerConfigFile")
                 .help("producer config properties file.");
+
+        parser.addArgument("--data.config")
+                .action(store())
+                .required(false)
+                .type(String.class)
+                .metavar("CONFIG-FILE")
+                .dest("dataConfigFile")
+                .help("producer data config properties file.");
+
+        parser.addArgument("--datatype")
+                .action(store())
+                .required(false)
+                .type(String.class)
+                .metavar("DATATYPE")
+                .help("messages type : string or json ");
 
         return parser;
     }

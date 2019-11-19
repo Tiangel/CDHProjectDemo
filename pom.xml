@@ -8,6 +8,9 @@
     <modules>
         <module>data-structure-arithmetic</module>
         <module>kafka-producer-perf-test</module>
+        <module>flume-demo</module>
+        <module>redisson-demo</module>
+        <module>vms-job</module>
     </modules>
 
     <packaging>pom</packaging>
