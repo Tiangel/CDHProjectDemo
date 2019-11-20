@@ -18,13 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author Charles
- * @package com.hdjt.bigdata.service.impl
- * @classname CommunityIMScheduleImpl
- * @description TODO
- * @date 2019-10-31 17:10
- */
+
 @Service
 public class CommunityIMScheduleImpl implements CommunityIMSchedule {
 

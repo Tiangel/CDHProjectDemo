@@ -1,32 +1,21 @@
 package com.cloudera.phoenixdemo.controller;
 
-import com.hdjt.bigdata.Constant.IMChatConstant;
-import com.hdjt.bigdata.utils.ResponseDto;
+import com.alibaba.fastjson.JSON;
+import com.cloudera.phoenixdemo.constant.IMChatConstant;
+import com.cloudera.phoenixdemo.service.IQueryIMChatService;
+import com.cloudera.phoenixdemo.utils.ResponseDto;
+import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
-import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.sort.FieldSortBuilder;
-import org.elasticsearch.search.sort.ScoreSortBuilder;
-import org.elasticsearch.search.sort.SortOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/api/imchat")
@@ -34,6 +23,10 @@ public class ImChatontroller {
 
     @Autowired
     private RestHighLevelClient highLevelClient;
+
+    @Autowired
+    private IQueryIMChatService queryIMChatService;
+
     private static Logger logger = LoggerFactory.getLogger(ImChatontroller.class);
 
 
@@ -63,79 +56,77 @@ public class ImChatontroller {
     @RequestMapping(value = "/query", method = RequestMethod.POST)
     public ResponseDto query(@RequestBody Map<String, Object> map) {
 
-        List<Map<String, Object>> list = new ArrayList<>();
-        try {
-            if (map != null && !map.isEmpty()) {
-                int fromNum = (int) map.get("fromNum");
-                int querySize = (int) map.get("querySize");
-                Map<String, Object> queryCondition = (Map<String, Object>) map.get("queryCondition");
-                Map<String, Boolean> sortFieldsToAsc = (Map<String, Boolean>) map.get("sortFieldsToAsc");
-                SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-                //条件
-                if (queryCondition != null && !queryCondition.isEmpty()) {
-                    BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
-                    queryCondition.forEach((k, v) -> {
-                        if (v instanceof Map) {
-                            //范围选择map  暂定时间
-                            Map<String, Date> mapV = (Map<String, Date>) v;
-                            if (mapV != null && !mapV.isEmpty()) {
-                                boolQueryBuilder.must(
-                                        QueryBuilders.rangeQuery(k)
-                                                .gte(mapV.get("start"))
-                                                .lt(mapV.get("end"))
-                                );
-                            }
-                        } else {
-                            //普通模糊匹配
-                            boolQueryBuilder.must(QueryBuilders.matchPhraseQuery(k, v.toString()));
-                        }
-                    });
-                    sourceBuilder.query(boolQueryBuilder);
-                }
-                //分页
-                fromNum = fromNum <= -1 ? IMChatConstant.COMMUNITY_IM_CHAT_PAGE_NUM : fromNum;
-                querySize = querySize >= 1000 ? IMChatConstant.COMMUNITY_IM_CHAT_MAX_PAGE_SIZE : querySize;
-                querySize = querySize <= 0 ? IMChatConstant.COMMUNITY_IM_CHAT_DEFAULT_PAGE_SIZE : querySize;
-                sourceBuilder.from(fromNum);
-                sourceBuilder.size(querySize);
-                //超时
-                sourceBuilder.timeout(new TimeValue(IMChatConstant.COMMUNITY_IM_CHAT_TIMEOUT, TimeUnit.SECONDS));
-                //排序
-                if (sortFieldsToAsc != null && !sortFieldsToAsc.isEmpty()) {
-                    sortFieldsToAsc.forEach((k, v) -> {
-                        // true 为升序，false 为降序
-                        sourceBuilder.sort(new FieldSortBuilder(k).order(v ? SortOrder.ASC : SortOrder.DESC));
-                    });
-                } else {
-                    sourceBuilder.sort(new ScoreSortBuilder().order(SortOrder.DESC));
-                }
-
-                SearchRequest request = new SearchRequest();
-                //索引
-                request.indices(IMChatConstant.COMMUNITY_IM_CHAT_INDEX);
-                //各种组合条件
-                request.source(sourceBuilder);
-
-                //请求
-                logger.info("查询请求参数 ====> " + request.source().toString());
-                SearchResponse response = highLevelClient.search(request, RequestOptions.DEFAULT);
-
-                //获取source
-//            List<Map<String, Object>> collect = Arrays.stream(response.getHits().getHits()).map(b -> {
-//                return b.getSourceAsMap();
-//            }).collect(Collectors.toList());
-                SearchHits hits = response.getHits();
-                SearchHit[] searchHits = hits.getHits();
-                for (SearchHit hit : searchHits) {
-                    Map sourceAsString = hit.getSourceAsMap();
-                    list.add(sourceAsString);
-                }
-            }
-        } catch (Exception e) {
-            logger.error(e.getMessage());
-            e.printStackTrace();
-            return new ResponseDto(e);
+        Map<String, Object> queryMap = new HashMap<>();
+        Map<String, Object> queryAndCondition = new HashMap<>();
+        Map<String, Object> queryOrCondition = new HashMap<>();
+        String msg_id = (String) map.get("msg_id");
+        if (StringUtils.isNoneBlank(msg_id)) {
+            queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_MSG_ID, msg_id);
         }
-        return new ResponseDto(list);
+
+        String userId = (String) map.get("userId");
+        if (StringUtils.isNoneBlank(userId)) {
+            String roleType = (String) map.get("roleType");
+            if (IMChatConstant.IM_CHAT_QUERY_ROLETYPE_ALL.equalsIgnoreCase(roleType)) {
+                queryOrCondition.put(IMChatConstant.IM_CHAT_QUERY_FROM, userId);
+                queryOrCondition.put(IMChatConstant.IM_CHAT_QUERY_TO, userId);
+            } else if (IMChatConstant.IM_CHAT_QUERY_ROLETYPE_HKEEPER.equalsIgnoreCase(roleType)) {
+                queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_TO, userId);
+            } else if (IMChatConstant.IM_CHAT_QUERY_ROLETYPE_RESIDENT.equalsIgnoreCase(roleType)) {
+                queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_FROM, userId);
+            } else {
+                queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_FROM, userId);
+            }
+        }
+
+        String chat_type = (String) map.get(IMChatConstant.IM_CHAT_QUERY_CHAT_TYPE);
+        if (StringUtils.isNoneBlank(chat_type)) {
+            queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_CHAT_TYPE, chat_type);
+        }
+
+        String mediaType = (String) map.get("mediaType");
+        if (StringUtils.isNoneBlank(mediaType)) {
+            queryAndCondition.put(IMChatConstant.IM_CHAT_MEDIA_TYPE, mediaType);
+        }
+
+        String msg = (String) map.get("msg");
+        if (StringUtils.isNoneBlank(msg)) {
+            queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_MSG, msg);
+        }
+
+        Map<String, Object> timestamp = new HashMap<>();
+        timestamp.put(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_BEGINDATE, map.get(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_BEGINDATE));
+        timestamp.put(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_ENDDATE, map.get(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_ENDDATE));
+        queryAndCondition.put(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP, timestamp);
+
+
+        Object pageNo = map.get("pageNo");
+        int fromNum = 0;
+        int querySize = 0;
+        if(null != pageNo){
+            fromNum = (int) pageNo -1;
+        }else{
+            fromNum = IMChatConstant.COMMUNITY_IM_CHAT_DEFAULT_FROM_NUM;
+        }
+        Object pageSize = map.get("pageSize");
+        if(null != pageSize){
+            querySize = (int) pageSize;
+        }else{
+            querySize = IMChatConstant.COMMUNITY_IM_CHAT_DEFAULT_PAGE_SIZE;
+        }
+        queryMap.put(IMChatConstant.COMMUNITY_IM_CHAT_FROMNUM, fromNum * querySize);
+        queryMap.put(IMChatConstant.COMMUNITY_IM_CHAT_QUERYSIZE, pageSize);
+        queryMap.put(IMChatConstant.COMMUNITY_IM_CHAT_QUERY_AND_CONDITION, queryAndCondition);
+        queryMap.put(IMChatConstant.COMMUNITY_IM_CHAT_QUERY_OR_CONDITION, queryOrCondition);
+        queryMap.put(IMChatConstant.COMMUNITY_IM_CHAT_ORDERBY_CLAUSE, map.get(IMChatConstant.COMMUNITY_IM_CHAT_ORDERBY_CLAUSE));
+
+        System.out.println(JSON.toJSONString(queryMap));
+        return queryIMChatService.queryIMChatFromES(queryMap);
+    }
+
+    // {"queryOrCondition":{"from":"715cb167df8b990a7748cd92402224f3","to":"715cb167df8b990a7748cd92402224f3"},"queryAndCondition":{"timestamp":{"beginDate":1573694783000,"endDate":1574048112285}},"querySize":100,"orderByClause":{"msg_id":true,"timestamp":false},"fromNum":0}
+    @RequestMapping(value = "/queryES", method = RequestMethod.POST)
+    public ResponseDto queryES(@RequestBody Map<String, Object> map) {
+        return queryIMChatService.queryIMChatFromES(map);
     }
 }
