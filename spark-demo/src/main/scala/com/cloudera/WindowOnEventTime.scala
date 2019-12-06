@@ -15,7 +15,7 @@ object WindowOnEventTime {
 
     val conf = new SparkConf()
       .setIfMissing("spark.master", "local[4]")
-      .setAppName("Structured Network Count")
+      .setAppName("Structured Streaming Window-Event-Time")
       .set("fs.defaultFS","file://E:/CDHProjectDemo/spark-demo/temp/")
 
     // 创建程序入口 SparkSession，并引入 spark.implicits 来允许 Scalaobject 隐式转换为 DataFrame
@@ -26,6 +26,8 @@ object WindowOnEventTime {
     val lines: DataFrame = spark.readStream.format("socket")
       .option("host", "10.101.71.43")
       .option("port", "9999")
+      //添加时间戳
+      .option("includeTimestamp", true)
       .load()
 
 
