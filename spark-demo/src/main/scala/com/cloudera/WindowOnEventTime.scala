@@ -29,8 +29,10 @@ object WindowOnEventTime {
       .load()
 
 
-    val words = lines.as[(String, Timestamp)].flatMap(line => line._1.split(" ")
-      .map(word => TimeWord(word, line._2))).toDF()
+    val words = lines.as[(String, Timestamp)].flatMap(line =>
+      line._1.split(" ")
+        .map(word => TimeWord(word, line._2))
+    ).toDF()
 
     // 假如输入的数据 words 格式是 timestamp: Timestamp. word: String
     import org.apache.spark.sql.functions._
