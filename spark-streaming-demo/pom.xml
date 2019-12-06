@@ -33,8 +33,8 @@
         <hbase.version>1.3.0</hbase.version>
         <hive.version>1.2.0</hive.version>
         <kafka.version>0.10.0.1</kafka.version>
-        <!--<spark.version>2.4.0-cdh6.1.1</spark.version>-->
-        <spark.version>2.2.0</spark.version>
+        <spark.version>2.4.0-cdh6.1.1</spark.version>
+        <!--<spark.version>2.2.0</spark.version>-->
         <zkclient.version>0.11</zkclient.version>
         <jedis.version>3.0.0</jedis.version>
         <redisson.version>3.11.4</redisson.version>
@@ -75,13 +75,7 @@
             <version>${spark.version}</version>
             <scope>${provided.scope}</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework/org.springframework.transaction -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>org.springframework.transaction</artifactId>
-            <version>3.2.2.RELEASE</version>
-        </dependency>
-        <dependency>
+           <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_${scala.version}</artifactId>
             <version>${spark.version}</version>

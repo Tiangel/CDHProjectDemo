@@ -11,6 +11,7 @@
         <module>flume-demo</module>
         <module>redisson-demo</module>
         <module>vms-job</module>
+        <module>elasticsearch-demo</module>
     </modules>
 
     <packaging>pom</packaging>

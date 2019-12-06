@@ -13,6 +13,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.listener.AbstractMessageListenerContainer;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
 import java.util.HashMap;
@@ -61,8 +62,14 @@ public class KafkaConsumerConfig {
     public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
+        // 并发创建的消费者数量
         factory.setConcurrency(concurrency);
+        // 开启批处理
+        factory.setBatchListener(true);
         factory.getContainerProperties().setPollTimeout(1500);
+        if (!enableAutoCommit) {
+            factory.getContainerProperties().setAckMode((AbstractMessageListenerContainer.AckMode.MANUAL));
+        }
         return factory;
     }
 

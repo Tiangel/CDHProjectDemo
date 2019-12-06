@@ -62,26 +62,30 @@ public class QueryIMChatServiceImpl implements IQueryIMChatService {
                             //范围选择map  暂定时间
                             Map<String, Date> mapV = (Map<String, Date>) v;
                             if (mapV != null && !mapV.isEmpty()) {
-                                boolQueryBuilder.must(
+                                boolQueryBuilder.filter(
                                         QueryBuilders.rangeQuery(k)
                                                 .gte(mapV.get(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_BEGINDATE))
                                                 .lt(mapV.get(IMChatConstant.IM_CHAT_QUERY_TIMESTAMP_ENDDATE))
                                 );
                             }
-                        } else{
+                        } else if (IMChatConstant.IM_CHAT_QUERY_MSG.equalsIgnoreCase(k)) {
                             //普通模糊匹配
                             boolQueryBuilder.must(QueryBuilders.matchPhraseQuery(k, v.toString()));
+                        } else {
+                            boolQueryBuilder.filter(QueryBuilders.termQuery(k, v.toString()));
                         }
                     });
-                    sourceBuilder.query(boolQueryBuilder);
                 }
                 // OR 条件
                 if (queryOrCondition != null && !queryOrCondition.isEmpty()) {
+                    BoolQueryBuilder queryOrBuilder = QueryBuilders.boolQuery();
                     queryOrCondition.forEach((k, v) -> {
-                        boolQueryBuilder.should(QueryBuilders.matchPhraseQuery(k,v.toString()));
+                        queryOrBuilder.should(QueryBuilders.termQuery(k, v.toString()));
                     });
-                    sourceBuilder.query(boolQueryBuilder);
+                    boolQueryBuilder.must(queryOrBuilder);
+//                    boolQueryBuilder.minimumShouldMatch(1);
                 }
+                sourceBuilder.query(boolQueryBuilder);
 
                 //分页
                 fromNum = fromNum <= -1 ? IMChatConstant.COMMUNITY_IM_CHAT_DEFAULT_FROM_NUM : fromNum;
