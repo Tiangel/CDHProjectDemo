@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord, RecordM
 class KafkaSink[K, V](createProducer: () => KafkaProducer[K, V]) extends Serializable {
   /* This is the key idea that allows us to work around running into
      NotSerializableExceptions. */
+  // 这样能够避免运行时产生 NotSerializableExceptions 异常
   lazy val producer = createProducer()
 
   def send(topic: String, key: K, value: V): Future[RecordMetadata] =
@@ -26,6 +27,7 @@ object KafkaSink {
       sys.addShutdownHook {
         // Ensure that, on executor JVM shutdown, the Kafka producer sends
         // any buffered messages to Kafka before shutting down.
+        // 确保在 Executor 的 JVM 关闭前 Kafka producer 将缓存中的所有信息写入 Kafka
         producer.close()
       }
       producer

@@ -41,12 +41,10 @@ object WindowOnEventTime {
     val windowedCounts = words
       .withWatermark("timestamp", "60 seconds")
       .groupBy(
-    // 设置窗口按照 timestamp 列为参照时间， 20seconds 为窗口大小，10seconds 滑动一次，并且按照 word 进行分组计数
-      window($"timestamp", "60 seconds", "30 seconds"),
-      $"word"
-    ).count
-
-
+        // 设置窗口按照 timestamp 列为参照时间， 20seconds 为窗口大小，10seconds 滑动一次，并且按照 word 进行分组计数
+        window($"timestamp", "60 seconds", "30 seconds"),
+        $"word"
+      ).count
 
     // 第四步: 创建查询句柄，定义打印结果方式并启动程序 这里使用 writeStream 方法, 输出模式为全部输出到控制台。
     val query: StreamingQuery = windowedCounts.writeStream

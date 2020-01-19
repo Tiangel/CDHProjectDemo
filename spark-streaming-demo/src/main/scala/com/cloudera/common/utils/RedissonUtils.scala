@@ -148,13 +148,13 @@ object RedissonUtils extends Serializable {
 //      i = i + 1
 //    }
 //    println(i)
-//    val batch: RBatch = createBatch(redisson)
-//
-//    for (i <- 0 until 10) {
-//      val batchBuket: RBucketAsync[String] = batch.getBucket("test:test-" + i)
-//      batchBuket.setAsync(i + "", 3600, TimeUnit.SECONDS) // 单条删除
-//      //      batchBuket.deleteAsync()
-//    }
+    val batch: RBatch = createBatch(redisson)
+
+    for (i <- 0 until 10) {
+      val batchBuket: RBucketAsync[String] = batch.getBucket("test:test-" + i)
+      batchBuket.setAsync(i + "", 3600, TimeUnit.SECONDS) // 单条删除
+      //      batchBuket.deleteAsync()
+    }
 //    batch.executeAsync()
     println(System.currentTimeMillis() - long)
     println("=======================================")

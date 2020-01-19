@@ -12,6 +12,12 @@
         <module>redisson-demo</module>
         <module>vms-job</module>
         <module>elasticsearch-demo</module>
+        <module>structured-streaming-demo</module>
+        <module>flink-demo</module>
+        <module>data-structure-algorithm-demo</module>
+        <module>scala-demo</module>
+        <module>nowcoder-demo</module>
+        <module>leecode-demo</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -3,12 +3,10 @@ package com.cloudera
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.log4j.Logger
-import org.apache.spark
-import org.apache.spark.rdd.RDD
+import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
-import org.apache.spark.{SparkConf, rdd}
-import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object RemoteSubmitApp {
   val logger = Logger.getLogger(this.getClass)
