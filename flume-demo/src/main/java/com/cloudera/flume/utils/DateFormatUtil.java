@@ -1,4 +1,4 @@
-package com.cloudera.flume;
+package com.cloudera.flume.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

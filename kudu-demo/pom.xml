@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.cloudera</groupId>
+    <artifactId>kudu-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <repositories>
+        <!-- cloudera 的仓库 -->
+        <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+            <name>Cloudera Repositories</name>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <properties>
+        <kudu.version>1.10.0-cdh6.3.2</kudu.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+    <dependencies>
+        <!-- Kudu client -->
+        <dependency>
+            <groupId>org.apache.kudu</groupId>
+            <artifactId>kudu-client</artifactId>
+            <version>${kudu.version}</version>
+        </dependency>
+
+        <!-- Log -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <!-- Unit test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>

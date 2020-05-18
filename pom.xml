@@ -16,8 +16,8 @@
         <module>flink-demo</module>
         <module>data-structure-algorithm-demo</module>
         <module>scala-demo</module>
-        <module>nowcoder-demo</module>
         <module>leecode-demo</module>
+        <module>kudu-demo</module>
     </modules>
 
     <packaging>pom</packaging>

@@ -1,7 +1,8 @@
-package com.cloudera.flume;
+package com.cloudera.flume.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.cloudera.flume.utils.DateFormatUtil;
 import org.apache.flume.Context;
 import org.apache.flume.Event;
 import org.apache.flume.interceptor.Interceptor;
