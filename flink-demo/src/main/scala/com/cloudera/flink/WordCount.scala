@@ -7,7 +7,7 @@ object WordCount {
 
   def main(args: Array[String]): Unit = {
 
-    val env = StreamExecutionEnvironment.getExecutionEnvironment
+    val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
     val host: String = "bigdata-dev-kafka-01"
     val port: Int = 7777
