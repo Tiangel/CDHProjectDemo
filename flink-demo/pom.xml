@@ -83,7 +83,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka-0.10_${scala.version.large}</artifactId>
+            <artifactId>flink-connector-kafka_${scala.version.large}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
         </dependency>
