@@ -1,8 +1,9 @@
-package com.hdjt.bigdata.passengerFlow
+package com.cloudera.savekafkaoffset
 
 import java.util.concurrent.TimeUnit
 
-import com.hdjt.bigdata.KafkaSink
+import com.cloudera.common.KafkaSink
+import com.cloudera.common.utils.{ConfigUtils, KafkaRedisUtils, ParseFlowRecord, RedissonUtils}
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
 import org.apache.spark.broadcast.Broadcast

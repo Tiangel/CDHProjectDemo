@@ -18,6 +18,7 @@
         <module>scala-demo</module>
         <module>leecode-demo</module>
         <module>kudu-demo</module>
+        <module>java-source-analysis</module>
     </modules>
 
     <packaging>pom</packaging>

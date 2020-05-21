@@ -1,6 +1,7 @@
-package com.hdjt.bigdata.passengerFlow
+package com.cloudera.savekafkaoffset
 
-import com.hdjt.bigdata.KafkaSink
+import com.cloudera.common.KafkaSink
+import com.cloudera.common.utils.{ConfigUtils, KafkaRedisUtils, ParseFlowRecord, RedissonUtils}
 import org.apache.log4j.Logger
 import org.apache.spark.SparkConf
 import org.apache.spark.broadcast.Broadcast
@@ -63,7 +64,7 @@ object PassengerFlowCalculateApp {
           val batch: RBatch = RedissonUtils.createBatch(redisson)
           result.collect.foreach(record => {
             //  客流统计后台逻辑
-            LogicData.passengerflow(batch, record)
+//            LogicData.passengerflow(batch, record)
           })
           //更新offset到Redis中
           offsetRanges.foreach({ offsetRange =>
@@ -77,7 +78,7 @@ object PassengerFlowCalculateApp {
           batch.executeAsync()
 
           // 读取Redis中大屏相关指标统计结果
-          val bigScreenJson: String = BigScreenStat.getBigScreenStatResult(redisson);
+          val bigScreenJson: String = "......................";
           logger.info("发送到大屏: ====> " + bigScreenJson)
           // 将统计数据发送到Kafka
           kafkaProducer.value.send(

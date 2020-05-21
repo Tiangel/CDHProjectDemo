@@ -1,4 +1,4 @@
-package com.hdjt.bigdata.passengerFlow
+package com.cloudera.common.utils
 
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.log4j.Logger
