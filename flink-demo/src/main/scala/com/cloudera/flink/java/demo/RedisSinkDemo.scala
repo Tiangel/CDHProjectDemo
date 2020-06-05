@@ -1,4 +1,4 @@
-package com.cloudera.flink.demo
+package com.cloudera.flink.java.demo
 
 import java.net.InetSocketAddress
 import java.util

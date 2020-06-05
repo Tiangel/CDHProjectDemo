@@ -1,4 +1,4 @@
-package com.cloudera.flink;
+package com.cloudera.flink.java;
 
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;

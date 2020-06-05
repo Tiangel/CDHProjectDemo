@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <scala.version>2.11.12</scala.version>
-        <scala.version.large>2.11</scala.version.large>
+        <scala.binary.version>2.11</scala.binary.version>
         <!--<hadoop.version>3.0.0-cdh6.3.2</hadoop.version>-->
         <flink.version>1.9.2</flink.version>
         <jedis.version>2.9.0</jedis.version>
@@ -53,25 +53,14 @@
             <!--            <scope>${scope.level}</scope>-->
         </dependency>
         <dependency>
-            <groupId>org.apache.bahir</groupId>
-            <artifactId>flink-connector-redis_${scala.version.large}</artifactId>
-            <version>${flink.connector.redis.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.flink</groupId>
-                    <artifactId>flink-streaming-java_2.11</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-scala_${scala.version.large}</artifactId>
+            <artifactId>flink-scala_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-statebackend-rocksdb_2.11</artifactId>
+            <artifactId>flink-statebackend-rocksdb_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
         </dependency>
@@ -86,6 +75,22 @@
             <artifactId>flink-connector-kafka_${scala.version.large}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.bahir</groupId>
+            <artifactId>flink-connector-redis_${scala.version.large}</artifactId>
+            <version>${flink.connector.redis.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.flink</groupId>
+                    <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-elasticsearch6_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
         </dependency>
         <!-- logging -->
         <dependency>

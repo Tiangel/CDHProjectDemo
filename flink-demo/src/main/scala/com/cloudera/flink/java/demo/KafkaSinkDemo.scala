@@ -1,8 +1,8 @@
-package com.cloudera.flink.demo
+package com.cloudera.flink.java.demo
 
 import java.util.Properties
 
-import com.cloudera.flink.utils.ConfigUtils
+import com.cloudera.flink.java.utils.ConfigUtils
 import org.apache.flink.api.common.typeinfo.TypeInformation
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.scala._
@@ -42,7 +42,7 @@ object KafkaSinkDemo {
       }
 
       override def getProducedType: TypeInformation[(String, String)] = {
-        createTuple2TypeInformation(createTypeInformation[String],createTypeInformation[ String])
+        createTuple2TypeInformation(createTypeInformation[String], createTypeInformation[String])
       }
     }, props).setStartFromEarliest)
 

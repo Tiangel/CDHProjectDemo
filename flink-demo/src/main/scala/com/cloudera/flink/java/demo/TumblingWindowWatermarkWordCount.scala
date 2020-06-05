@@ -1,4 +1,4 @@
-package com.cloudera.flink.demo
+package com.cloudera.flink.java.demo
 
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor

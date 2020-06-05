@@ -1,4 +1,4 @@
-package com.cloudera.flink.utils
+package com.cloudera.flink.java.utils
 
 import java.util.Properties
 
