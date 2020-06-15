@@ -1,14 +1,12 @@
-package com.cloudera.flink.java.demo
+package com.cloudera.flink.java.sink
 
 import java.util.Properties
 
 import com.cloudera.flink.java.utils.ConfigUtils
 import org.apache.flink.api.common.typeinfo.TypeInformation
-import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
-import org.apache.flink.streaming.api.scala._
+import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createTuple2TypeInformation, createTypeInformation}
 import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer, KafkaDeserializationSchema}
 import org.apache.kafka.clients.consumer.ConsumerRecord
-
 
 object KafkaSinkDemo {
 

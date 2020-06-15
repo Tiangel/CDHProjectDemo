@@ -19,6 +19,7 @@
         <module>leecode-demo</module>
         <module>kudu-demo</module>
         <module>java-source-analysis</module>
+        <module>hbase-demo</module>
     </modules>
 
     <packaging>pom</packaging>

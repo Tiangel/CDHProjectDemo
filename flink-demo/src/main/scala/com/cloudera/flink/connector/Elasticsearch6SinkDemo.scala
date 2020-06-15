@@ -1,18 +1,14 @@
-package com.cloudera.flink.java.demo
+package com.cloudera.flink.java.connector
 
 import java.util
 
 import org.apache.flink.api.common.functions.RuntimeContext
 import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
-import org.apache.flink.streaming.connectors.elasticsearch.{ActionRequestFailureHandler, ElasticsearchSinkBase, ElasticsearchSinkFunction, RequestIndexer}
-import org.apache.flink.streaming.connectors.elasticsearch6.{ElasticsearchSink, RestClientFactory}
-import org.apache.flink.util.ExceptionUtils
+import org.apache.flink.streaming.connectors.elasticsearch.{ElasticsearchSinkBase, ElasticsearchSinkFunction, RequestIndexer}
+import org.apache.flink.streaming.connectors.elasticsearch6.ElasticsearchSink
 import org.apache.http.HttpHost
-import org.elasticsearch.ElasticsearchParseException
-import org.elasticsearch.action.ActionRequest
 import org.elasticsearch.action.index.IndexRequest
-import org.elasticsearch.client.{Requests, RestClientBuilder}
-import org.elasticsearch.common.util.concurrent.EsRejectedExecutionException
+import org.elasticsearch.client.Requests
 
 class Elasticsearch6SinkDemo {
 

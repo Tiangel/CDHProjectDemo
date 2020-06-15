@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.demo
+package com.cloudera.flink.java.connector
 
 import java.net.{InetSocketAddress, MalformedURLException}
 import java.util

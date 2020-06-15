@@ -1,8 +1,7 @@
-package com.cloudera.flink.java.demo
+package com.cloudera.flink.java.source
 
-import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.functions.source.SourceFunction
-import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
+import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
 
 import scala.util.Random
 
