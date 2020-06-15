@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.utils
+package com.cloudera.flink.utils
 
 import java.net.{MalformedURLException, URL}
 import java.util

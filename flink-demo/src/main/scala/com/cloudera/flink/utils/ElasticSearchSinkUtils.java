@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.utils;
+package com.cloudera.flink.utils;
 
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.connectors.elasticsearch.ElasticsearchSinkFunction;

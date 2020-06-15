@@ -1,6 +1,6 @@
-package com.cloudera.flink.java.demo
+package com.cloudera.flink.demo
 
-import com.cloudera.flink.java.function.CustomFilter
+import com.cloudera.flink.function.CustomFilter
 import org.apache.flink.api.common.functions.RichFilterFunction
 import org.apache.flink.streaming.api.scala._
 

@@ -1,4 +1,4 @@
-package com.cloudera.flink.java;
+package com.cloudera.flink.java.socket;
 
 import java.io.InputStream;
 import java.net.Socket;

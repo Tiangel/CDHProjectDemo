@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.source
+package com.cloudera.flink.source
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}

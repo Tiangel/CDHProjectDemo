@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.function
+package com.cloudera.flink.function
 
 import org.apache.flink.api.common.functions.RichFlatMapFunction
 import org.apache.flink.configuration.Configuration

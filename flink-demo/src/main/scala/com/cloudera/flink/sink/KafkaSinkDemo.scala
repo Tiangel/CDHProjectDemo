@@ -1,8 +1,8 @@
-package com.cloudera.flink.java.sink
+package com.cloudera.flink.sink
 
 import java.util.Properties
 
-import com.cloudera.flink.java.utils.ConfigUtils
+import com.cloudera.flink.utils.ConfigUtils
 import org.apache.flink.api.common.typeinfo.TypeInformation
 import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createTuple2TypeInformation, createTypeInformation}
 import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer, KafkaDeserializationSchema}

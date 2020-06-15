@@ -1,4 +1,4 @@
-package com.hdb.flink.kafka
+package com.cloudera.flink.common.deserializationschema
 
 import com.hdb.flink.common.constant.Constant
 import org.apache.flink.api.common.typeinfo.{TypeHint, TypeInformation}

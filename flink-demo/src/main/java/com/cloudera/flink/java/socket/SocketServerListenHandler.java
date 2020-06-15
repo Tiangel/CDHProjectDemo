@@ -1,7 +1,6 @@
-package com.cloudera.flink.java;
+package com.cloudera.flink.java.socket;
 
 
-import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -48,7 +47,6 @@ public class SocketServerListenHandler {
     public static void main(String[] args) {
         SocketServerListenHandler socketServerListenHandler = new SocketServerListenHandler(6666);
         socketServerListenHandler.listenClientConnect();
-
     }
 
 }

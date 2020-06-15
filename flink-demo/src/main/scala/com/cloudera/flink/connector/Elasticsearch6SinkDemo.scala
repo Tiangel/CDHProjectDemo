@@ -1,4 +1,4 @@
-package com.cloudera.flink.java.connector
+package com.cloudera.flink.connector
 
 import java.util
 
