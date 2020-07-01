@@ -28,7 +28,7 @@
         <elasticsearch.version>7.0.1</elasticsearch.version>
         <shiro.version>1.4.0</shiro.version>
         <jwt.version>3.3.0</jwt.version>
-        <mysql.version>5.1.48</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <pagehelper.version>1.2.3</pagehelper.version>
         <phoenix.version>4.14.1-HBase-1.2</phoenix.version>
         <dom4j.version>1.6.1</dom4j.version>
