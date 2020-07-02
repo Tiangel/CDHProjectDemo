@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-algorithm-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-algorithm-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-algorithm-demo/src/main/java/com/cloudera/dac/Hanoitower.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-algorithm-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-arithmetic" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-arithmetic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-structure-arithmetic/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elasticsearch-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elasticsearch-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/elasticsearch-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-demo/src/main/resources/dev" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flink-demo/src/main/scala" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flume-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flume-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flume-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generate-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/generate-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hbase-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hbase-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-source-analysis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-source-analysis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-producer-perf-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-producer-perf-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kafka-producer-perf-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leecode-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leecode-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leecode-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/phoenix-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/phoenix-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redisson-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redisson-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redisson-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scala-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scala-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scala-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-streaming-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-streaming-demo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spark-streaming-demo/src/main/resources/env/dev" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sqoop-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/structured-streaming-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tess4j-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tess4j-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vms-job" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

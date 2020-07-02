@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hive-demo" />
+        <module name="spark-streaming-demo" />
+        <module name="data-structure-algorithm-demo" />
+        <module name="elasticsearch-demo" />
+        <module name="java-source-analysis" />
+        <module name="data-structure-arithmetic" />
+        <module name="flume-demo" />
+        <module name="phoenix-demo" />
+        <module name="tess4j-demo" />
+        <module name="kafka-demo" />
+        <module name="flink-demo" />
+        <module name="scala-demo" />
+        <module name="generate-data" />
+        <module name="spark-demo" />
+        <module name="kafka-producer-perf-test" />
+        <module name="sqoop-demo" />
+        <module name="leecode-demo" />
+        <module name="structured-streaming-demo" />
+        <module name="hbase-demo" />
+        <module name="kudu-demo" />
+        <module name="vms-job" />
+        <module name="redisson-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cdh-project" target="1.8" />
+      <module name="data-structure-algorithm-demo" target="1.8" />
+      <module name="data-structure-arithmetic" target="1.8" />
+      <module name="DataStructures-demo" target="1.8" />
+      <module name="elasticsearch-demo" target="1.8" />
+      <module name="flink-demo" target="1.8" />
+      <module name="flume-demo" target="1.8" />
+      <module name="generate-data" target="1.8" />
+      <module name="hbase-demo" target="1.8" />
+      <module name="hive-demo" target="1.8" />
+      <module name="java-source-analysis" target="1.8" />
+      <module name="kafka-demo" target="1.8" />
+      <module name="kafka-producer-perf-test" target="1.8" />
+      <module name="kudu-demo" target="1.5" />
+      <module name="leecode-demo" target="1.8" />
+      <module name="nowcoder-demo" target="1.8" />
+      <module name="phoenix-demo" target="1.8" />
+      <module name="redisson-demo" target="1.5" />
+      <module name="scala-demo" target="1.8" />
+      <module name="spark-demo" target="1.8" />
+      <module name="spark-streaming-demo" target="1.8" />
+      <module name="sqoop-demo" target="1.8" />
+      <module name="structured-streaming-demo" target="1.8" />
+      <module name="tess4j-demo" target="1.8" />
+      <module name="vms-job" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="flume-demo" options="" />
+      <module name="phoenix-demo" options="" />
+      <module name="tess4j-demo" options="-parameters" />
+    </option>
+  </component>
+</project>

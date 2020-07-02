@@ -1,9 +1,6 @@
 package com.cloudera.flink.source
 
-import org.apache.flink.streaming.api.functions.source.SourceFunction
 import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
-
-import scala.util.Random
 
 /**
  * 自定义 source
@@ -12,7 +9,7 @@ object CustomSourceDemo {
   def main(args: Array[String]): Unit = {
     val streamEnv: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
-    val stream: DataStream[SensorReading] = streamEnv.addSource(new MyCustomSource())
+    val stream: DataStream[SensorReading] = streamEnv.addSource(new CustomSource)
 
     // SplitStream:
     // 根据某些特征把一个 DataStream 拆分成两个或多个 DataStream
@@ -42,6 +39,16 @@ object CustomSourceDemo {
       warningData => (warningData._1, warningData._2, "warning"),
       lowData => (lowData.id, "healthy")
     )
+    // 或者使用 CoMapFunction
+//    val coMap1: DataStream[Product] = connected.map(new CoMapFunction[(String, Double), Product] {
+//      override def map1(value: (String, Double)): Product = {
+//        (value._1, value._2, "warning")
+//      }
+//
+//      override def map2(value: SensorReading): Product = {
+//        (value.id, "healthy")
+//      }
+//    })
 
     // connect 与 union 的区别:
     // Union 连接的流的类型必须是一致的，Connect 连接的两个流的类型可以不一致，可以在之后的 CoMap 中去调整为一致的。
@@ -54,33 +61,6 @@ object CustomSourceDemo {
 }
 
 
-// 定义样例类，传感器 id，时间戳，温度
-case class SensorReading(id: String, timestamp: Long, temperature: Double)
 
-class MyCustomSource extends SourceFunction[SensorReading] {
-  // flag: 表示数据源是否还在正常运行
-  var running: Boolean = true
 
-  override def run(ctx: SourceFunction.SourceContext[SensorReading]): Unit = {
-    // 初始化一个随机数发生器
-    val rand = new Random()
-    var curTemp = 1.to(10).map(
-      i => ("sensor_" + i, 65 + rand.nextGaussian() * 20))
-    while (running) {
-      // 更新温度值
-      curTemp = curTemp.map(
-        t => (t._1, t._2 + rand.nextGaussian())
-      )
-      // 获取当前时间戳
-      val curTime = System.currentTimeMillis()
-      curTemp.foreach(
-        t => ctx.collect(SensorReading(t._1, curTime, t._2))
-      )
-      Thread.sleep(100)
-    }
-  }
 
-  override def cancel(): Unit = {
-    running = false
-  }
-}

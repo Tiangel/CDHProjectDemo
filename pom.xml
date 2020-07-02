@@ -20,6 +20,7 @@
         <module>kudu-demo</module>
         <module>java-source-analysis</module>
         <module>hbase-demo</module>
+        <module>generate-data</module>
     </modules>
 
     <packaging>pom</packaging>

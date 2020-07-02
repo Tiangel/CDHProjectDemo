@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bb1e729-21a1-44dd-a3a9-3f63eb972e17" name="Default Changelist" comment="提交flink 相关示例代码">
+      <change afterPath="$PROJECT_DIR$/flink-demo/conf/flink-conf.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/MyCustomSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/WordEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/hbase-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/log4j.properties.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/AverageAggregateFunctionDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CountWithTimeoutFunction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/ReduceCombineProcessFunciton.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/TestAggregatFunctionByWindow.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/WindowsProcessFunctionDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyAverageAggregateFunction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/partition/PartitioningTransformation.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/EnableCheckpointRestartJob.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FailureRateRestartJob.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FixedDelayRestartJob.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/NoRestartJob.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sideoutput/SideOutPutEventDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/Flink2HBaseDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/MysqlSinkdemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HBaseSink.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HttpSink.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/MySqlSink.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CollectionSource.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSensorSource.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomStationSource.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/HDFSFileSource.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/SensorReading.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/StationLog.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/ExampleCountWindowAverage.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/FlatMapWithStateDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MapWithStateDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/EnableCheckpointForFailover.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/KeepCheckpointForRestore.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestore.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestoreWithoutException.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/GsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/HBaseUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/MyPeriodicWatermarks.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/MyPunctuatedWatermarks.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/PeriodicWatermarksDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/CountWindowDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/LatenessDataOnWindow.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/RollingWindowDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/SessionWindowDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/SlidingWindowDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowTriggerDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/IntervalJoinDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SessionWindowJoinDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SlidingWindowJoinDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/TumblingWindowJoinDemo.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/OneSecondIntervalTrigger.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/Cities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/CreateIDCardNo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/GenerateDaily.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/GenerateUserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/IdCardGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/RandomCreditCardNumberGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/RandomUserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/solr/GenerateSolrTestData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/GetKuduClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduApiMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduKerberosAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/demo/KuduExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/demo/KuduKerberosExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/utils/ClientUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/utils/KuduUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/client.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/admin.keytab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/core-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/hdfs-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/krb5.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/kudu.keytab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/core-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/hdfs-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/hdfs-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/mapred-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/mapred-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/yarn-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/yarn-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/demo/CustomFilterDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CustomFilterDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CustomFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/CustomFilter.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/MyFlatMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyFlatMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/KafkaSinkDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/KafkaSourceDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSourceDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSourceDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/ElasticSearchSinkUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kudu-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kudu-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/TestKudu.java" beforeDir="false" afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/TestKudu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phoenix-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phoenix-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-streaming-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-streaming-demo/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Scala Object" />
+        <option value="Package Object" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\development\repository" />
+        <option name="mavenHome" value="D:/development/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\development\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1aqcy0PVtsW9oL9bhhOIWb4Jv9Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path" value="D:\development\repository" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587449006690" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/hbase-demo/src/main/java/com/cloudera/hbase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flink-demo/src/main/conf" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.26696834" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cloudera.flume.utils" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.cloudera.flink" />
+      <recent name="com.cloudera.flink.utils" />
+      <recent name="org.apache.kafka.tools" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\conf" />
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\scala\restart" />
+      <recent name="E:\CDHProjectDemo\flink-demo\data" />
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\resources" />
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\scala\com\cloudera\flink\sink" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cloudera.flink.state" />
+      <recent name="com.cloudera.flink.upgrade" />
+      <recent name="com.cloudera.flink.partition" />
+      <recent name="com.cloudera.flink.window.join" />
+      <recent name="com.cloudera.flink.function" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\resources\dev" />
+      <recent name="E:\CDHProjectDemo\flink-demo" />
+      <recent name="E:\CDHProjectDemo\flink-demo\src\main\resources" />
+      <recent name="E:\CDHProjectDemo\kudu-demo\src\main\resources\hdfs-client-kb" />
+      <recent name="E:\CDHProjectDemo\kudu-demo\src\main\java\com\cloudera\kudu\utils" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.FlatMapWithStateDemo">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+      <option name="DOC_BASE" value="" />
+      <option name="CONTEXT_PATH" value="" />
+      <option name="TOMCAT_PORT" value="8080" />
+      <option name="AJP_PORT" value="8009" />
+      <option name="ADMIN_PORT" value="8005" />
+      <option name="VM_OPTIONS" value="" />
+      <option name="PASS_PARENT_ENV_OPTIONS" value="true" />
+      <method />
+    </configuration>
+    <configuration name="EnableCheckpointForFailover" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloudera.flink.upgrade.EnableCheckpointForFailover" />
+      <module name="flink-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloudera.flink.upgrade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlatMapWithStateDemo" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloudera.flink.state.FlatMapWithStateDemo" />
+      <module name="flink-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloudera.flink.state.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeepCheckpointForRestore" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloudera.flink.upgrade.KeepCheckpointForRestore" />
+      <module name="flink-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloudera.flink.upgrade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapWithStateDemo" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloudera.flink.state.MapWithStateDemo" />
+      <module name="flink-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloudera.flink.state.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SavepointForRestore" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloudera.flink.upgrade.SavepointForRestore" />
+      <module name="flink-demo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloudera.flink.upgrade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhoenixDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="phoenix-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloudera.phoenixdemo.PhoenixDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.PhoenixDemoApplication" />
+      <item itemvalue="Application.EnableCheckpointForFailover" />
+      <item itemvalue="Application.KeepCheckpointForRestore" />
+      <item itemvalue="Application.SavepointForRestore" />
+      <item itemvalue="Application.MapWithStateDemo" />
+      <item itemvalue="Application.FlatMapWithStateDemo" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FlatMapWithStateDemo" />
+        <item itemvalue="Application.MapWithStateDemo" />
+        <item itemvalue="Application.KeepCheckpointForRestore" />
+        <item itemvalue="Application.SavepointForRestore" />
+        <item itemvalue="Application.EnableCheckpointForFailover" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bb1e729-21a1-44dd-a3a9-3f63eb972e17" name="Default Changelist" comment="" />
+      <created>1563930876604</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563930876604</updated>
+      <workItem from="1563930879592" duration="2026000" />
+      <workItem from="1563943994218" duration="619000" />
+      <workItem from="1567661647067" duration="12156000" />
+      <workItem from="1568625580929" duration="253000" />
+      <workItem from="1568895567271" duration="9175000" />
+      <workItem from="1569200327727" duration="2081000" />
+      <workItem from="1569463535378" duration="14832000" />
+      <workItem from="1569552750331" duration="49000" />
+      <workItem from="1569561733124" duration="696000" />
+      <workItem from="1569580214744" duration="133000" />
+      <workItem from="1569738248833" duration="60000" />
+      <workItem from="1569738340941" duration="10310000" />
+      <workItem from="1569806555612" duration="16609000" />
+      <workItem from="1570498042322" duration="384000" />
+      <workItem from="1570498711818" duration="68085000" />
+      <workItem from="1572313617786" duration="684000" />
+      <workItem from="1572851748774" duration="1897000" />
+      <workItem from="1572856344511" duration="3748000" />
+      <workItem from="1573007375113" duration="2678000" />
+      <workItem from="1573112561729" duration="27041000" />
+      <workItem from="1573529440373" duration="665000" />
+      <workItem from="1573530239746" duration="38081000" />
+      <workItem from="1574652568038" duration="30668000" />
+      <workItem from="1575354007594" duration="258000" />
+      <workItem from="1575354353916" duration="1191000" />
+      <workItem from="1575355621762" duration="522000" />
+      <workItem from="1575356157087" duration="767000" />
+      <workItem from="1575357102965" duration="4024000" />
+      <workItem from="1575361429854" duration="29612000" />
+      <workItem from="1575598198121" duration="7966000" />
+      <workItem from="1575621393130" duration="1994000" />
+      <workItem from="1575623434637" duration="1560000" />
+      <workItem from="1575626041141" duration="606000" />
+      <workItem from="1575852905663" duration="599000" />
+      <workItem from="1575857278893" duration="609000" />
+      <workItem from="1575858052268" duration="13024000" />
+      <workItem from="1576456314004" duration="5864000" />
+      <workItem from="1576642282847" duration="2653000" />
+      <workItem from="1576811577782" duration="12376000" />
+      <workItem from="1578109156276" duration="1065000" />
+      <workItem from="1578876200328" duration="1083000" />
+      <workItem from="1579176441558" duration="8760000" />
+      <workItem from="1579337669331" duration="16976000" />
+      <workItem from="1582371877871" duration="185000" />
+      <workItem from="1587091522613" duration="1041000" />
+      <workItem from="1587117927708" duration="1601000" />
+      <workItem from="1587275415636" duration="775000" />
+      <workItem from="1587276253576" duration="9969000" />
+      <workItem from="1587383872525" duration="2081000" />
+      <workItem from="1587449347620" duration="744000" />
+      <workItem from="1587466827923" duration="298000" />
+      <workItem from="1587467186265" duration="893000" />
+      <workItem from="1587468226802" duration="1078000" />
+      <workItem from="1587545096167" duration="2999000" />
+      <workItem from="1587731127228" duration="10805000" />
+      <workItem from="1588923932799" duration="821000" />
+      <workItem from="1589248374146" duration="3459000" />
+      <workItem from="1589253070942" duration="24030000" />
+      <workItem from="1589467472345" duration="26537000" />
+      <workItem from="1589762235897" duration="16602000" />
+      <workItem from="1589875467841" duration="2878000" />
+      <workItem from="1589936329855" duration="5046000" />
+      <workItem from="1589943369616" duration="15926000" />
+      <workItem from="1590112742331" duration="10591000" />
+      <workItem from="1590538427194" duration="3300000" />
+      <workItem from="1590549772951" duration="4030000" />
+      <workItem from="1590665933804" duration="2452000" />
+      <workItem from="1590716258361" duration="3273000" />
+      <workItem from="1590736649641" duration="1398000" />
+      <workItem from="1590738994149" duration="1458000" />
+      <workItem from="1591075780949" duration="1386000" />
+      <workItem from="1591235758847" duration="6122000" />
+      <workItem from="1591249608620" duration="1226000" />
+      <workItem from="1591261888794" duration="23173000" />
+      <workItem from="1591347053020" duration="30020000" />
+      <workItem from="1591861456224" duration="343000" />
+      <workItem from="1592191509921" duration="17398000" />
+      <workItem from="1592375796433" duration="15217000" />
+      <workItem from="1592527078049" duration="19373000" />
+      <workItem from="1592639377675" duration="113249000" />
+    </task>
+    <task id="LOCAL-00001" summary="提交spark消费kafka保存offset到zk或redis">
+      <created>1569833934501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569833934501</updated>
+    </task>
+    <task id="LOCAL-00002" summary="提交spark消费kafka保存offset到zk或redis">
+      <created>1570691910428</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570691910428</updated>
+    </task>
+    <task id="LOCAL-00003" summary="提交spark消费kafka保存offset到zk或redis">
+      <created>1574150160570</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574150160570</updated>
+    </task>
+    <task id="LOCAL-00004" summary="提交spark消费kafka保存offset到zk或redis">
+      <created>1574216479539</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574216479539</updated>
+    </task>
+    <task id="LOCAL-00005" summary="提交spark相关示例代码">
+      <created>1575621676639</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575621676639</updated>
+    </task>
+    <task id="LOCAL-00006" summary="提交spark相关示例代码">
+      <created>1575622193099</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575622193099</updated>
+    </task>
+    <task id="LOCAL-00007" summary="提交spark相关示例代码">
+      <created>1575624258304</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575624258305</updated>
+    </task>
+    <task id="LOCAL-00008" summary="提交spark相关示例代码">
+      <created>1579430995817</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579430995817</updated>
+    </task>
+    <task id="LOCAL-00009" summary="提交spark相关示例代码">
+      <created>1587091640719</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587091640719</updated>
+    </task>
+    <task id="LOCAL-00010" summary="提交flink 相关示例代码">
+      <created>1591324402690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591324402690</updated>
+    </task>
+    <task id="LOCAL-00011" summary="提交flink 相关示例代码">
+      <created>1591340015297</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591340015297</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="提交spark消费kafka保存offset到zk或redis" />
+    <MESSAGE value="提交spark相关示例代码" />
+    <MESSAGE value="提交flink 相关示例代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交flink 相关示例代码" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="587" y="127" key="#Project_Structure" timestamp="1592462728109">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1589340334989" />
+    <state x="587" y="127" key="#Project_Structure/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592462728109" />
+    <state x="651" y="79" key="#Scala" timestamp="1591269434074">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="651" y="79" key="#Scala/0.0.1920.1040@0.0.1920.1040" timestamp="1591269434074" />
+    <state x="752" y="378" key="#Scopes" timestamp="1587731151198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="378" key="#Scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1587731151198" />
+    <state x="641" y="635" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593390608881">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591335103846" />
+    <state x="641" y="635" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592556111440" />
+    <state x="641" y="635" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390608881" />
+    <state x="924" y="431" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593315498258">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="693" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589341496203" />
+    <state x="924" y="431" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593315498258" />
+    <state x="1020" y="284" key="#com.intellij.ide.util.MemberChooser" timestamp="1593651624884">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="765" y="211" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591684135254" />
+    <state x="1020" y="284" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593651624884" />
+    <state x="1020" y="595" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1593654919900">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="765" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591580230731" />
+    <state x="1020" y="595" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593654919900" />
+    <state x="873" y="520" width="610" height="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593656086477">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="655" y="386" width="610" height="274" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1591681064960" />
+    <state x="873" y="520" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593656086477" />
+    <state x="873" y="537" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1593654908927">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="655" y="399" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1591580236600" />
+    <state x="873" y="537" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593654908927" />
+    <state x="1035" y="401" key="#xdebugger.evaluate" timestamp="1592556862564">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1035" y="401" key="#xdebugger.evaluate/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592556862564" />
+    <state x="167" y="81" key="CommitChangelistDialog2" timestamp="1592191781709">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="167" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592191781709" />
+    <state x="987" y="369" key="FileChooserDialogImpl" timestamp="1592816508817">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591752746681" />
+    <state x="987" y="369" key="FileChooserDialogImpl/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592816508817" />
+    <state width="2517" height="537" key="GridCell.Tab.0.bottom" timestamp="1593673839704">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="479" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174983" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592198304918" />
+    <state width="2517" height="537" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839704" />
+    <state width="2517" height="426" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824197" />
+    <state width="2517" height="537" key="GridCell.Tab.0.center" timestamp="1593673839704">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="479" key="GridCell.Tab.0.center/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174983" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592198304918" />
+    <state width="2517" height="537" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839704" />
+    <state width="2517" height="426" key="GridCell.Tab.0.center/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824197" />
+    <state width="2517" height="537" key="GridCell.Tab.0.left" timestamp="1593673839704">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="479" key="GridCell.Tab.0.left/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174983" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592198304918" />
+    <state width="2517" height="537" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839704" />
+    <state width="2517" height="426" key="GridCell.Tab.0.left/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824197" />
+    <state width="2517" height="537" key="GridCell.Tab.0.right" timestamp="1593673839704">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="479" key="GridCell.Tab.0.right/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174983" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592198304918" />
+    <state width="2517" height="537" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839704" />
+    <state width="2517" height="426" key="GridCell.Tab.0.right/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824197" />
+    <state width="2517" height="537" key="GridCell.Tab.1.bottom" timestamp="1593673839605">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174978" />
+    <state width="1877" height="376" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591752747872" />
+    <state width="2517" height="537" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839605" />
+    <state width="2517" height="426" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824107" />
+    <state width="2517" height="537" key="GridCell.Tab.1.center" timestamp="1593673839602">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.center/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174978" />
+    <state width="1877" height="376" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591752747872" />
+    <state width="2517" height="537" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839602" />
+    <state width="2517" height="426" key="GridCell.Tab.1.center/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824107" />
+    <state width="2517" height="537" key="GridCell.Tab.1.left" timestamp="1593673839602">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.left/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174978" />
+    <state width="1877" height="376" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591752747872" />
+    <state width="2517" height="537" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839602" />
+    <state width="2517" height="426" key="GridCell.Tab.1.left/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824107" />
+    <state width="2517" height="537" key="GridCell.Tab.1.right" timestamp="1593673839604">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="492" key="GridCell.Tab.1.right/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1592577174978" />
+    <state width="1877" height="376" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591752747872" />
+    <state width="2517" height="537" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593673839604" />
+    <state width="2517" height="426" key="GridCell.Tab.1.right/0.0.2560.1400/-1080.0.1080.1920@0.0.2560.1400" timestamp="1593390824107" />
+    <state x="860" y="434" key="IDE.errors.dialog" timestamp="1593652206244">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="860" y="434" key="IDE.errors.dialog/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593652206244" />
+    <state x="789" y="378" key="Scala.TypeAnnotations.TypePatterns" timestamp="1587468483688">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="789" y="378" key="Scala.TypeAnnotations.TypePatterns/0.0.1920.1040@0.0.1920.1040" timestamp="1587468483688" />
+    <state x="378" y="394" key="SettingsEditor" timestamp="1593652294187">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591269147325" />
+    <state x="378" y="394" key="SettingsEditor/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593652294187" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1591340023954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591340023954" />
+    <state x="759" y="297" key="chooseDestDirectoryDialog" timestamp="1591349971613">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="759" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591349971613" />
+    <state x="798" y="288" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1593671168035">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="798" y="288" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593671168035" />
+    <state x="982" y="298" width="596" height="804" key="find.popup" timestamp="1592813636260">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="982" y="298" width="596" height="804" key="find.popup/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592813636260" />
+    <state width="430" height="96" key="javadoc.popup.new" timestamp="1589519726091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="430" height="96" key="javadoc.popup.new/0.0.1920.1040@0.0.1920.1040" timestamp="1589519726091" />
+    <state x="445" y="174" key="new project wizard" timestamp="1592543647994">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="334" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1591584232730" />
+    <state x="445" y="174" key="new project wizard/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592543647994" />
+    <state x="821" y="323" key="run.anything.popup" timestamp="1593651650755">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591317245173" />
+    <state x="821" y="323" key="run.anything.popup/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593651650755" />
+    <state x="937" y="325" width="672" height="160" key="search.everywhere.popup" timestamp="1593508663215">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="432" y="240" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591324139914" />
+    <state x="937" y="325" width="672" height="160" key="search.everywhere.popup/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593508663215" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/data-structure-arithmetic/src/main/java/search/BinarySearch.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/data-structure-arithmetic/src/main/java/search/BinarySearch.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/data-structure-arithmetic/src/main/java/search/BinarySearch.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/data-structure-arithmetic/src/main/java/search/BinarySearch.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kafka-producer-perf-test/src/main/java/org/apache/kafka/tools/MyQueue.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/redisson/redisson/3.11.4/redisson-3.11.4-sources.jar!/org/redisson/spring/transaction/RedissonTransactionObject.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/phoenix-demo/src/main/java/com.cloudera.phoenixdemo/config/DataSourceConfig.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/nowcoder-demo/src/main/java/cloudera/FindWork.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/nowcoder-demo/src/main/java/cloudera/FindWork.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode-demo/src/main/java/com/leecode/AddTwoNumbers_2.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/leecode-demo/src/main/java/com/leecode/AddTwoNumbers_2.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbase-demo/src/main/java/com/cloudera/hbase/demo/HBaseSample.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hbase-demo/src/main/java/com/cloudera/hbase/utils/ClientUtils.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.9.2/flink-streaming-java_2.11-1.9.2-sources.jar!/org/apache/flink/streaming/api/functions/sink/SocketClientSink.java</url>
+          <line>144</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.9.2/flink-streaming-java_2.11-1.9.2-sources.jar!/org/apache/flink/streaming/api/functions/sink/SocketClientSink.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduApiMain.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduApiMain.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/GsonUtil.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/kudu-demo/src/test/java/com/cloudera/TestKudu.java</url>
+          <line>114</line>
+          <properties class="com.cloudera.TestKudu" method="testSelect">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/demo/WordCount.scala</url>
+          <line>31</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/MySqlSink.scala</url>
+          <line>84</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/MySqlSink.scala</url>
+          <line>16</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HBaseSink.scala</url>
+          <line>40</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>70</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>58</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>50</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>44</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>30</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala</url>
+          <line>67</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/ExampleCountWindowAverage.scala</url>
+          <line>61</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala</url>
+          <line>63</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala</url>
+          <line>68</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((String[])array)[1]" custom="java.lang.String[]" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>

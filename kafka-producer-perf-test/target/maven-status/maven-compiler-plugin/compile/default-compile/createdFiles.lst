@@ -1,0 +1,16 @@
+org\apache\kafka\tools\ProducerPerformance$PerfCallback.class
+org\apache\kafka\tools\MyKafkaProducer$1.class
+org\apache\kafka\tools\ProducerPerformance$Stats.class
+org\apache\kafka\tools\ProducerPerformance.class
+org\apache\kafka\tools\MyKafkaProducer$7.class
+org\apache\kafka\tools\MyQueue$1.class
+org\apache\kafka\tools\Send.class
+org\apache\kafka\tools\MyKafkaProducer$2.class
+org\apache\kafka\tools\MyKafkaProducer$6.class
+org\apache\kafka\tools\MyKafkaProducer$4.class
+org\apache\kafka\tools\MyKafkaProducer$5.class
+org\apache\kafka\tools\MyQueue.class
+org\apache\kafka\tools\MyKafkaProducer$3.class
+org\apache\kafka\tools\MyKafkaProducer$8.class
+org\apache\kafka\tools\MyKafkaProducer$DemoCallback.class
+org\apache\kafka\tools\MyKafkaProducer.class

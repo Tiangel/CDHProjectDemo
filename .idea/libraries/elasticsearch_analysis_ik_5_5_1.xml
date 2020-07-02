@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="elasticsearch-analysis-ik-5.5.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/vms-job/src/main/lib/elasticsearch-analysis-ik-5.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cdh-project.iml" filepath="$PROJECT_DIR$/cdh-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-structure-algorithm-demo/data-structure-algorithm-demo.iml" filepath="$PROJECT_DIR$/data-structure-algorithm-demo/data-structure-algorithm-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-structure-arithmetic/data-structure-arithmetic.iml" filepath="$PROJECT_DIR$/data-structure-arithmetic/data-structure-arithmetic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch-demo/elasticsearch-demo.iml" filepath="$PROJECT_DIR$/elasticsearch-demo/elasticsearch-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink-demo/flink-demo.iml" filepath="$PROJECT_DIR$/flink-demo/flink-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flume-demo/flume-demo.iml" filepath="$PROJECT_DIR$/flume-demo/flume-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generate-data/generate-data.iml" filepath="$PROJECT_DIR$/generate-data/generate-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hbase-demo/hbase-demo.iml" filepath="$PROJECT_DIR$/hbase-demo/hbase-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hive-demo/hive-demo.iml" filepath="$PROJECT_DIR$/hive-demo/hive-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-source-analysis/java-source-analysis.iml" filepath="$PROJECT_DIR$/java-source-analysis/java-source-analysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka-demo/kafka-demo.iml" filepath="$PROJECT_DIR$/kafka-demo/kafka-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka-producer-perf-test/kafka-producer-perf-test.iml" filepath="$PROJECT_DIR$/kafka-producer-perf-test/kafka-producer-perf-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kudu-demo/kudu-demo.iml" filepath="$PROJECT_DIR$/kudu-demo/kudu-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leecode-demo/leecode-demo.iml" filepath="$PROJECT_DIR$/leecode-demo/leecode-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/phoenix-demo/phoenix-demo.iml" filepath="$PROJECT_DIR$/phoenix-demo/phoenix-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redisson-demo/redisson-demo.iml" filepath="$PROJECT_DIR$/redisson-demo/redisson-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scala-demo/scala-demo.iml" filepath="$PROJECT_DIR$/scala-demo/scala-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spark-demo/spark-demo.iml" filepath="$PROJECT_DIR$/spark-demo/spark-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spark-streaming-demo/spark-streaming-demo.iml" filepath="$PROJECT_DIR$/spark-streaming-demo/spark-streaming-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqoop-demo/sqoop-demo.iml" filepath="$PROJECT_DIR$/sqoop-demo/sqoop-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/structured-streaming-demo/structured-streaming-demo.iml" filepath="$PROJECT_DIR$/structured-streaming-demo/structured-streaming-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tess4j-demo/tess4j-demo.iml" filepath="$PROJECT_DIR$/tess4j-demo/tess4j-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vms-job/vms-job.iml" filepath="$PROJECT_DIR$/vms-job/vms-job.iml" />
+    </modules>
+  </component>
+</project>

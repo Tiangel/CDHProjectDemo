@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.flume:flume-ng-core:1.9.0-cdh6.3.2">
+    <CLASSES>
+      <root url="jar://D:/development/repository/org/apache/flume/flume-ng-core/1.9.0-cdh6.3.2/flume-ng-core-1.9.0-cdh6.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/development/repository/org/apache/flume/flume-ng-core/1.9.0-cdh6.3.2/flume-ng-core-1.9.0-cdh6.3.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/development/repository/org/apache/flume/flume-ng-core/1.9.0-cdh6.3.2/flume-ng-core-1.9.0-cdh6.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
