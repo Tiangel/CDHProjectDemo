@@ -1,4 +1,4 @@
-package restart
+package com.cloudera.flink.restart
 
 import java.sql.Timestamp
 
@@ -27,8 +27,8 @@ object EnableCheckpointRestartJob extends App {
     override def run(ctx: SourceFunction.SourceContext[(String, Int, Long)]): Unit = {
       var index: Int = 1
       while (true) {
-        index = index + 1
         ctx.collect("key", index, System.currentTimeMillis())
+        index = index + 1
         Thread.sleep(100)
       }
     }

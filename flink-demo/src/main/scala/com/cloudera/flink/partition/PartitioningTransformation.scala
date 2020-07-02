@@ -1,47 +1,45 @@
-package com.realtime.flink.streaming.partition
+package com.cloudera.flink.partition
 
 import org.apache.flink.api.common.functions.Partitioner
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment, _}
 
 
-object PartitioningTransformation {
+object PartitioningTransformation extends App {
 
-  def main(args: Array[String]): Unit = {
-    // Checking input parameters
-    val params = ParameterTool.fromArgs(args)
 
-    // set up the execution environment
-    val env = StreamExecutionEnvironment.getExecutionEnvironment
+  // Checking input parameters
+  val params = ParameterTool.fromArgs(args)
 
-    // make parameters available in the web interface
-    env.getConfig.setGlobalJobParameters(params)
+  // set up the execution environment
+  val env = StreamExecutionEnvironment.getExecutionEnvironment
 
-    val dataStream: DataStream[(String, Int)] = env.fromElements(("a", 3), ("d", 4), ("c", 2), ("c", 5), ("a", 5))
+  // make parameters available in the web interface
+  env.getConfig.setGlobalJobParameters(params)
 
-    val shuffleStream = dataStream.shuffle
+  val dataStream: DataStream[(String, Int)] = env.fromElements(("a", 3), ("d", 4), ("c", 2), ("c", 5), ("a", 5))
 
-    val rebalanceStream = dataStream.rebalance
+  val shuffleStream = dataStream.shuffle
 
-    val rescaleStream = dataStream.rescale
+  val rebalanceStream = dataStream.rebalance
 
-    val customStream = dataStream.partitionCustom(customPartitioner, 1)
+  val rescaleStream = dataStream.rescale
 
-    //输出计算结果
-    customStream.print()
+  val customStream = dataStream.partitionCustom(customPartitioner, 1)
 
-    env.execute("Streaming PartitioningTransformation")
+  //输出计算结果
+  customStream.print()
+
+  env.execute("Streaming PartitioningTransformation Job")
+}
+
+object customPartitioner extends Partitioner[String] {
+  //获取随机数生成器
+  val r = scala.util.Random
+
+  override def partition(key: String, numPartitions: Int): Int = {
+    //定义分区策略，key中如果包含a则放在0分区中，其他情况则根据Partitions
+    if (key.contains("a")) 0 else r.nextInt(numPartitions)
+
   }
-
-  object customPartitioner extends Partitioner[String] {
-    //获取随机数生成器
-    val r = scala.util.Random
-
-    override def partition(key: String, numPartitions: Int): Int = {
-      //定义分区策略，key中如果包含a则放在0分区中，其他情况则根据Partitions
-      if (key.contains("a")) 0 else r.nextInt(numPartitions)
-
-    }
-  }
-
 }

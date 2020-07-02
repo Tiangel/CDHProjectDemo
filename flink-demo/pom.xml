@@ -17,7 +17,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <scala.version>2.11.12</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
-        <!--<hadoop.version>3.0.0-cdh6.3.2</hadoop.version>-->
         <flink.version>1.9.2</flink.version>
         <flink.connector.redis.version>1.1-SNAPSHOT</flink.connector.redis.version>
         <flink.shade.version>3.0.0-cdh6.3.2-9.0</flink.shade.version>
@@ -32,6 +31,7 @@
         <lombok.version>1.18.10</lombok.version>
         <log4j-over-slf4j.version>1.7.30</log4j-over-slf4j.version>
         <scope.level>compile</scope.level>
+        <!--        <scope.level>provided</scope.level>-->
     </properties>
 
     <repositories>
@@ -87,16 +87,13 @@
             <artifactId>flink-scala_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-runtime-web_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
+            <scope>${scope.level}</scope>
         </dependency>
 
         <dependency>
@@ -104,48 +101,18 @@
             <artifactId>flink-streaming-scala_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-runtime-web_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-statebackend-rocksdb_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -176,16 +143,6 @@
             <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
             <scope>${scope.level}</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.bahir</groupId>
@@ -202,16 +159,6 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-elasticsearch6_${scala.binary.version}</artifactId>
             <version>${flink.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -240,18 +187,6 @@
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
-        <!--加入下面两个依赖才会出现 Flink 的日志出来-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-log4j12</artifactId>-->
-        <!--            <version>${slf4j.version}</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>slf4j-simple</artifactId>-->
-        <!--            <version>${slf4j.version}</version>-->
-        <!--        </dependency>-->
-
     </dependencies>
     <build>
         <pluginManagement>
@@ -360,9 +295,10 @@
         </plugins>
         <resources>
             <resource>
-                <directory>src/main/resource</directory>
+                <directory>${basedir}/src/main/resources/${profile.active}</directory>
                 <includes>
                     <include>**/*.xml</include>
+                    <include>**/*.properties</include>
                 </includes>
                 <!--<excludes>-->
                 <!--<exclude>**/*.xml</exclude>-->
@@ -371,4 +307,27 @@
             </resource>
         </resources>
     </build>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.active>dev</profile.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profile.active>test</profile.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profile.active>prod</profile.active>
+            </properties>
+        </profile>
+    </profiles>
 </project>

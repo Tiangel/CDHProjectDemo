@@ -29,7 +29,7 @@
     </appender>
 
     <!-- This affects logging for both user code and Flink -->
-    <root level="INFO">
+    <root level="WARN">
         <appender-ref ref="console"/>
     </root>
 

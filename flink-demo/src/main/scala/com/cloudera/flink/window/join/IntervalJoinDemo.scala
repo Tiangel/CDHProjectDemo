@@ -7,7 +7,10 @@ import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.util.Collector
 
-object IntervalJoin extends App {
+/**
+ * Interval Join  间接关联
+ */
+object IntervalJoinDemo extends App {
 
 
   val env = StreamExecutionEnvironment.getExecutionEnvironment
@@ -20,7 +23,7 @@ object IntervalJoin extends App {
     })
 
   //创建白色元素数据集
-  val whiteStream: DataStream[(Int, Long)] = env.fromElements((2, 17L), (2, 18L), (2, 19L), (2, 20L), (2, 21L), (2, 22L), (2, 22L), (5, 3L))
+  val whiteStream: DataStream[(Int, Long)] = env.fromElements((2, 17L), (2, 18L), (2, 19L), (2, 20L), (2, 21L), (2, 22L), (2, 23L), (5, 3L))
     .assignTimestampsAndWatermarks(new BoundedOutOfOrdernessTimestampExtractor[(Int, Long)](Time.milliseconds(1)) {
       override def extractTimestamp(element: (Int, Long)): Long = element._2
     })
@@ -38,7 +41,7 @@ object IntervalJoin extends App {
       }
     })
 
-  windowStream.print("IntervalJoin")
+  windowStream.print("Interval Join")
 
   env.execute("Interval Join Demo Job")
 }

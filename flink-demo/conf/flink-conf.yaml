@@ -56,7 +56,7 @@ taskmanager.numberOfTaskSlots: 1
 parallelism.default: 1
 
 # The default file system scheme and authority.
-# 
+#
 # By default file paths without scheme are interpreted relative to the local
 # root file system 'file:///'. Use this to override the default and interpret
 # relative paths relative to a different file system,
@@ -75,9 +75,9 @@ parallelism.default: 1
 # The path where metadata for master recovery is persisted. While ZooKeeper stores
 # the small ground truth for checkpoint and leader election, this location stores
 # the larger objects, like persisted dataflow graphs.
-# 
+#
 # Must be a durable file system that is accessible from all nodes
-# (like HDFS, S3, Ceph, nfs, ...) 
+# (like HDFS, S3, Ceph, nfs, ...)
 #
 # high-availability.storageDir: hdfs:///flink/ha/
 
@@ -114,10 +114,10 @@ state.checkpoints.dir: file:///tmp/chkdir
 
 # Default target directory for savepoints, optional.
 #
-state.savepoints.dir: file:///tmp/chkdir 
+state.savepoints.dir: file:///tmp/chkdir
 
 # Flag to enable/disable incremental checkpoints for backends that
-# support incremental checkpoints (like the RocksDB state backend). 
+# support incremental checkpoints (like the RocksDB state backend).
 #
 # state.backend.incremental: false
 
@@ -144,7 +144,7 @@ jobmanager.execution.failover-strategy: region
 # The port to which the REST client connects to. If rest.bind-port has
 # not been specified, then the server will bind to this port as well.
 #
-rest.port: 4000
+rest.port: 8081
 
 # The address to which the REST client will connect to
 #
@@ -204,10 +204,10 @@ rest.port: 4000
 #
 # classloader.resolve-order: child-first
 
-# The amount of memory going to the network stack. These numbers usually need 
+# The amount of memory going to the network stack. These numbers usually need
 # no tuning. Adjusting them may be necessary in case of an "Insufficient number
 # of network buffers" error. The default min is 64MB, the default max is 1GB.
-# 
+#
 # taskmanager.network.memory.fraction: 0.1
 # taskmanager.network.memory.min: 64mb
 # taskmanager.network.memory.max: 1gb

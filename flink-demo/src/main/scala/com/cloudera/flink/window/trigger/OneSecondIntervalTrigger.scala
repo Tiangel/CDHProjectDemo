@@ -7,6 +7,7 @@ import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 
 /** 可提前触发的触发器。触发周期不小于 1 秒 */
 class OneSecondIntervalTrigger extends Trigger[SensorReading, TimeWindow] {
+
   override def onElement(element: SensorReading,
                          timestamp: Long,
                          window: TimeWindow,

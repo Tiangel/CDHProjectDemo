@@ -5,7 +5,7 @@ import org.apache.flink.streaming.api.functions.source.{RichSourceFunction, Sour
 
 import scala.util.Random
 
-class CustomSource extends RichSourceFunction[SensorReading] {
+class CustomSensorSource extends RichSourceFunction[SensorReading] {
   private var isRunning: Boolean = true
 
   override def open(parameters: Configuration): Unit = {

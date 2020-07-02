@@ -44,9 +44,9 @@ class HBaseSink extends RichSinkFunction[util.List[Put]] {
 
   private def getConfiguration(): org.apache.hadoop.conf.Configuration = {
     val configuration: org.apache.hadoop.conf.Configuration = HBaseConfiguration.create
-    configuration.addResource(new Path("./core-site.xml"))
-    configuration.addResource(new Path("./hdfs-site.xml"))
-    configuration.addResource(new Path("./hbase-site.xml"))
+    configuration.addResource(new Path("dev/core-site.xml"))
+    configuration.addResource(new Path("dev/hdfs-site.xml"))
+    configuration.addResource(new Path("dev/hbase-site.xml"))
     configuration
   }
 }

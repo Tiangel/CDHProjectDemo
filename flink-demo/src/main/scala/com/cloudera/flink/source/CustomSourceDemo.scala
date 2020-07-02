@@ -9,7 +9,7 @@ object CustomSourceDemo {
   def main(args: Array[String]): Unit = {
     val streamEnv: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment
 
-    val stream: DataStream[SensorReading] = streamEnv.addSource(new CustomSource)
+    val stream: DataStream[SensorReading] = streamEnv.addSource(new CustomSensorSource)
 
     // SplitStream:
     // 根据某些特征把一个 DataStream 拆分成两个或多个 DataStream

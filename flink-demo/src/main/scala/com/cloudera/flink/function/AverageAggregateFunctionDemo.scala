@@ -3,7 +3,7 @@ package com.cloudera.flink.function
 
 import com.cloudera.flink.function.customfunction.MyAverageAggregateFunction
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows
+import org.apache.flink.streaming.api.windowing.assigners.SlidingProcessingTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 
 
@@ -17,12 +17,16 @@ object AverageAggregateFunctionDemo extends App {
 
   val socketDs: DataStream[String] = streamEnv.socketTextStream(host, port)
 
-  socketDs.map(_.split("\\W+", -1))
-    .map(x => (x(0), x(1)))
-    .keyBy(0)
-    .window(TumblingEventTimeWindows.of(Time.seconds(10), Time.seconds(5)))
+  val aggregateWindowStream: DataStream[(String, Double)] = socketDs.map(x => {
+    val arr: Array[String] = x.split("\\W+", -1)
+    (arr(0), arr(1).toLong)
+  }).keyBy(0)
+    //指定窗口类型
+    .window(SlidingProcessingTimeWindows.of(Time.seconds(10), Time.seconds(5)))
+    //指定聚合函数逻辑，将第二个字段求平均值
     .aggregate(new MyAverageAggregateFunction)
 
+  aggregateWindowStream.print()
   streamEnv.execute("Average Aggregate Function Demo")
 
 }

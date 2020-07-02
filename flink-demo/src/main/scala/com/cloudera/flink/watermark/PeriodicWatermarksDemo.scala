@@ -1,7 +1,7 @@
 package com.cloudera.flink.watermark
 
 
-import com.cloudera.flink.source.{CustomSource, SensorReading}
+import com.cloudera.flink.source.{CustomSensorSource, SensorReading}
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.scala._
@@ -20,7 +20,7 @@ object PeriodicWatermarksDemo extends App {
   // 每隔 5 秒产生一个 watermark
   streamEnv.getConfig.setAutoWatermarkInterval(5000)
 
-  val dataStream: DataStream[SensorReading] = streamEnv.addSource(new CustomSource)
+  val dataStream: DataStream[SensorReading] = streamEnv.addSource(new CustomSensorSource)
 
 
   //  val watermarksStream: DataStream[SensorReading] = dataStream.assignTimestampsAndWatermarks(

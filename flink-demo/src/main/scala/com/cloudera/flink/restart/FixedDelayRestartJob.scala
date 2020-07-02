@@ -1,4 +1,4 @@
-package restart
+package com.cloudera.flink.restart
 
 import java.sql.Timestamp
 import java.util.concurrent.TimeUnit
@@ -35,8 +35,8 @@ object FixedDelayRestartJob extends App {
     override def run(ctx: SourceFunction.SourceContext[(String, Int, Long)]): Unit = {
       var index = 1
       while (true) {
-        index = index + 1
         ctx.collect("key", index, System.currentTimeMillis())
+        index = index + 1
         Thread.sleep(100)
       }
     }
