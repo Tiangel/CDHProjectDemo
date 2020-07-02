@@ -179,9 +179,9 @@
             </properties>
         </profile>
         <profile>
-            <id>pro</id>
+            <id>prod</id>
             <properties>
-                <profile.active>pro</profile.active>
+                <profile.active>prod</profile.active>
             </properties>
         </profile>
     </profiles>

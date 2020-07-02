@@ -2,100 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bb1e729-21a1-44dd-a3a9-3f63eb972e17" name="Default Changelist" comment="提交flink 相关示例代码">
-      <change afterPath="$PROJECT_DIR$/flink-demo/conf/flink-conf.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/Main2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/MyCustomSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/java/com/cloudera/flink/java/WordEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/hbase-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/log4j.properties.bak" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/AverageAggregateFunctionDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CountWithTimeoutFunction.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/ReduceCombineProcessFunciton.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/TestAggregatFunctionByWindow.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/WindowsProcessFunctionDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyAverageAggregateFunction.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/partition/PartitioningTransformation.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/EnableCheckpointRestartJob.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FailureRateRestartJob.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FixedDelayRestartJob.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/NoRestartJob.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sideoutput/SideOutPutEventDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/Flink2HBaseDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/MysqlSinkdemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HBaseSink.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HttpSink.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/MySqlSink.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CollectionSource.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSensorSource.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomStationSource.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/HDFSFileSource.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/SensorReading.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/StationLog.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/ExampleCountWindowAverage.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/FlatMapWithStateDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MapWithStateDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/EnableCheckpointForFailover.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/KeepCheckpointForRestore.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestore.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestoreWithoutException.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/GsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/HBaseUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/MyPeriodicWatermarks.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/MyPunctuatedWatermarks.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/PeriodicWatermarksDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/CountWindowDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/LatenessDataOnWindow.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/RollingWindowDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/SessionWindowDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/SlidingWindowDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowTriggerDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/IntervalJoinDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SessionWindowJoinDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SlidingWindowJoinDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/TumblingWindowJoinDemo.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/OneSecondIntervalTrigger.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/Cities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/CreateIDCardNo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/GenerateDaily.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/GenerateUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/IdCardGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/RandomCreditCardNumberGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/RandomUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generate-data/src/main/java/com.cloudera/solr/GenerateSolrTestData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/GetKuduClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduApiMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/KuduKerberosAuth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/demo/KuduExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/demo/KuduKerberosExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/utils/ClientUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/utils/KuduUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/client.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/admin.keytab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/core-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/hdfs-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/krb5.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kudu-demo/src/main/resources/hdfs-client-kb/kudu.keytab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/tmp/chkdir/b77f174fc587cb9618992defba0de2b9/chk-142/_metadata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flink-demo/tmp/chkdir/b77f174fc587cb9618992defba0de2b9/chk-142/b12019ac-67e6-4951-bad1-550907cb79dc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/conf/flink-conf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/conf/flink-conf.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flink-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/core-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/hdfs-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/hdfs-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/mapred-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/mapred-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/yarn-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/yarn-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/demo/CustomFilterDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CustomFilterDemo.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CustomFilter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/CustomFilter.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/MyFlatMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyFlatMap.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/KafkaSinkDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/KafkaSourceDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/resources/dev/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/AverageAggregateFunctionDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/AverageAggregateFunctionDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CountWithTimeoutFunction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/CountWithTimeoutFunction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/ReduceCombineProcessFunciton.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/ReduceCombineProcessFunciton.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/TestAggregatFunctionByWindow.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/TestAggregatFunctionByWindow.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/WindowsProcessFunctionDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/WindowsProcessFunctionDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyAverageAggregateFunction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/function/customfunction/MyAverageAggregateFunction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/partition/PartitioningTransformation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/partition/PartitioningTransformation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/EnableCheckpointRestartJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/EnableCheckpointRestartJob.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FailureRateRestartJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FailureRateRestartJob.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FixedDelayRestartJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/FixedDelayRestartJob.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/NoRestartJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/restart/NoRestartJob.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HBaseSink.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/sink/customsink/HBaseSink.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CollectionSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CollectionSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSensorSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSensorSource.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSourceDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomSourceDemo.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/utils/ElasticSearchSinkUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kudu-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kudu-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/TestKudu.java" beforeDir="false" afterPath="$PROJECT_DIR$/kudu-demo/src/main/java/com/cloudera/kudu/TestKudu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomStationSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/CustomStationSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/HDFSFileSource.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/HDFSFileSource.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/SensorReading.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/SensorReading.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/StationLog.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/source/StationLog.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/ExampleCountWindowAverage.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/ExampleCountWindowAverage.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/FlatMapWithStateDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/FlatMapWithStateDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MapWithStateDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MapWithStateDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/state/MinusStateFunction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/EnableCheckpointForFailover.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/EnableCheckpointForFailover.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/KeepCheckpointForRestore.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/KeepCheckpointForRestore.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestore.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestore.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestoreWithoutException.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/upgrade/SavepointForRestoreWithoutException.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/PeriodicWatermarksDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/watermark/PeriodicWatermarksDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/LatenessDataOnWindow.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/LatenessDataOnWindow.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowTriggerDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/WindowTriggerDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/IntervalJoinDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/IntervalJoinDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SessionWindowJoinDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SessionWindowJoinDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SlidingWindowJoinDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/SlidingWindowJoinDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/TumblingWindowJoinDemo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/join/TumblingWindowJoinDemo.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/ContinuousEventTimeTrigger.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/OneSecondIntervalTrigger.scala" beforeDir="false" afterPath="$PROJECT_DIR$/flink-demo/src/main/scala/com/cloudera/flink/window/trigger/OneSecondIntervalTrigger.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phoenix-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phoenix-demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spark-streaming-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-streaming-demo/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -455,7 +403,7 @@
       <workItem from="1592191509921" duration="17398000" />
       <workItem from="1592375796433" duration="15217000" />
       <workItem from="1592527078049" duration="19373000" />
-      <workItem from="1592639377675" duration="113249000" />
+      <workItem from="1592639377675" duration="113894000" />
     </task>
     <task id="LOCAL-00001" summary="提交spark消费kafka保存offset到zk或redis">
       <created>1569833934501</created>
@@ -595,10 +543,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1035" y="401" key="#xdebugger.evaluate/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1592556862564" />
-    <state x="167" y="81" key="CommitChangelistDialog2" timestamp="1592191781709">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="223" y="109" key="CommitChangelistDialog2" timestamp="1593674723590">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="167" y="81" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592191781709" />
+    <state x="223" y="109" key="CommitChangelistDialog2/0.0.2560.1400/-1080.0.1080.1880@0.0.2560.1400" timestamp="1593674723590" />
     <state x="987" y="369" key="FileChooserDialogImpl" timestamp="1592816508817">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
